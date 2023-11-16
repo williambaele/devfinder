@@ -8,7 +8,7 @@ const SearchBar = () => {
         <IoMdSearch
           style={{
             color: "#2563eb",
-            fontSize: "24px",
+            fontSize: "26px",
           }}
         />
       </div>
