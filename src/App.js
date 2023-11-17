@@ -22,9 +22,9 @@ function App() {
       const response = await fetch(`https://api.github.com/users/${username}`);
       const data = await response.json();
       setUserData(data);
+      console.log(data);
     } catch (error) {
       console.error("Error fetching user data:", error);
-      // You may want to handle errors here, for example, show an error message to the user.
     }
   };
 

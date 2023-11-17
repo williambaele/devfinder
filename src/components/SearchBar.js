@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 
-const SearchBar = ({ onSearchSubmit }) => {
+const SearchBar = ({ onSearchChange, onSearchSubmit }) => {
   const [search, setSearch] = useState("");
+  let timeoutId;
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      onSearchChange(e.target.value);
+    }, 500);
   };
 
   const handleSearchSubmit = () => {
     onSearchSubmit(search);
-    setSearch("");
   };
 
   return (
