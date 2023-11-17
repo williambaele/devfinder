@@ -1,4 +1,5 @@
 import React from "react";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const Body = () => {
   return (
@@ -35,6 +36,24 @@ const Body = () => {
         <div className="w-1/3 flex flex-col">
           <p className="text-gray-400">Following</p>
           <p className="text-white font-bold">5</p>
+        </div>
+      </div>
+      <div className="w-full grid grid-cols-2 space-y-2 pt-6">
+        <div className="flex gap-4 items-center">
+          <FaMapMarkerAlt style={{ color: "#FFFFFF" }} />
+          <p className="text-white">San Fransisco</p>
+        </div>
+        <div className="flex gap-4 items-center">
+          <FaMapMarkerAlt style={{ color: "#FFFFFF" }} />
+          <p className="text-white">San Fransisco</p>
+        </div>
+        <div className="flex gap-4 items-center">
+          <FaMapMarkerAlt style={{ color: "#FFFFFF" }} />
+          <p className="text-white">San Fransisco</p>
+        </div>
+        <div className="flex gap-4 items-center">
+          <FaMapMarkerAlt style={{ color: "#FFFFFF" }} />
+          <p className="text-white">San Fransisco</p>
         </div>
       </div>
     </div>
