@@ -32,17 +32,21 @@ const Body = ({ userData }) => {
           {userData ? (
             <h2 className="text-white text-2xl">{userData.name}</h2>
           ) : (
-            <h2 className="text-white text-2xl">Lorem ipsum</h2>
+            <h2 className="text-white text-2xl">John Doe</h2>
           )}
 
           {userData ? (
             <h2 className="text-[#2563eb] text-md">@{userData.login}</h2>
           ) : (
-            <h2 className="text-[#2563eb] text-md">@lorem_ipsum</h2>
+            <h2 className="text-[#2563eb] text-md">@john_doe</h2>
           )}
-          <p className="text-gray-200 text-md">
-            Joined {formatGitHubDate(userData?.created_at)}
-          </p>
+          {userData ? (
+            <p className="text-gray-200 text-md">
+              Joined {formatGitHubDate(userData?.created_at)}
+            </p>
+          ) : (
+            <p className="text-gray-200 text-md">Joined on 01/01/2000</p>
+          )}
         </div>
       </div>
       <div className="w-full py-4">
@@ -56,7 +60,7 @@ const Body = ({ userData }) => {
         )}
       </div>
       <div className="w-full p-4 px-6 rounded-lg bg-[#131C30] flex">
-        <div className="w-1/3 flex flex-col">
+        <div className="w-1/3 flex flex-col gap-2">
           <p className="text-gray-400">Repos</p>
           {userData ? (
             <p className="text-white font-bold">{userData.public_repos}</p>
@@ -64,7 +68,7 @@ const Body = ({ userData }) => {
             <p class="h-4 bg-gray-200 rounded-full dark:bg-gray-700 w-1/2"></p>
           )}
         </div>
-        <div className="w-1/3 flex flex-col">
+        <div className="w-1/3 flex flex-col gap-2">
           <p className="text-gray-400">Followers</p>
           {userData ? (
             <p className="text-white font-bold">{userData.followers}</p>
@@ -72,12 +76,12 @@ const Body = ({ userData }) => {
             <p class="h-4 bg-gray-200 rounded-full dark:bg-gray-700 w-1/2"></p>
           )}
         </div>
-        <div className="w-1/3 flex flex-col">
+        <div className="w-1/3 flex flex-col gap-2">
           <p className="text-gray-400">Following</p>
           {userData ? (
             <p className="text-white font-bold">{userData.following}</p>
           ) : (
-            <p className="text-white font-bold">8</p>
+            <p class="h-4 bg-gray-200 rounded-full dark:bg-gray-700 w-1/2"></p>
           )}
         </div>
       </div>
