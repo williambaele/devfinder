@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { IoSunnySharp, IoMoonSharp } from "react-icons/io5"; // Import the moon icon for dark mode
+import React from "react";
+import { IoSunnySharp, IoMoonSharp } from "react-icons/io5";
 
 const Header = ({ darkMode, setDarkMode }) => {
   const toggleDarkMode = () => {

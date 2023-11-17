@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 
-const SearchBar = ({ onSearchChange }) => {
+const SearchBar = ({ onSearchSubmit }) => {
   const [search, setSearch] = useState("");
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
-    onSearchChange(e.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    onSearchSubmit(search);
+    setSearch("");
   };
 
   return (
@@ -27,7 +31,10 @@ const SearchBar = ({ onSearchChange }) => {
         />
       </div>
       <div className="h-full flex items-center">
-        <button className="bg-[#2563eb] text-white text-bold h-full rounded-lg px-4">
+        <button
+          onClick={handleSearchSubmit}
+          className="bg-[#2563eb] text-white text-bold h-full rounded-lg px-4"
+        >
           Search
         </button>
       </div>
