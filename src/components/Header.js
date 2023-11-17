@@ -1,18 +1,41 @@
-import React from "react";
-import { IoSunnySharp } from "react-icons/io5";
+import React, { useState } from "react";
+import { IoSunnySharp, IoMoonSharp } from "react-icons/io5"; // Import the moon icon for dark mode
 
-const Header = () => {
+const Header = ({ darkMode, setDarkMode }) => {
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   return (
-    <div className="w-full flex justify-between">
-      <h1 className="text-white text-2xl">devfinder</h1>
-      <div className="flex items-center gap-4 cursor-pointer">
-        <p className="text-white text-lg">LIGHT</p>
-        <IoSunnySharp
-          style={{
-            color: "white",
-            fontSize: "20px",
-          }}
-        />{" "}
+    <div
+      className={`w-full flex justify-between items-center ${
+        darkMode ? "" : ""
+      }`}
+    >
+      <h1 className={`text-${darkMode ? "white" : "white"} text-2xl`}>
+        devfinder
+      </h1>
+      <div
+        onClick={toggleDarkMode}
+        className="flex items-center gap-4 cursor-pointer"
+      >
+        <p className={`text-${darkMode ? "white" : "white"} text-lg`}>
+          {darkMode ? "DARK" : "LIGHT"}
+        </p>
+        {darkMode ? (
+          <IoMoonSharp
+            style={{
+              color: darkMode ? "white" : "white",
+              fontSize: "20px",
+            }}
+          />
+        ) : (
+          <IoSunnySharp
+            style={{
+              color: darkMode ? "white" : "white",
+              fontSize: "20px",
+            }}
+          />
+        )}
       </div>
     </div>
   );

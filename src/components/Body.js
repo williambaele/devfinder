@@ -38,7 +38,7 @@ const Body = () => {
           <p className="text-white font-bold">5</p>
         </div>
       </div>
-      <div className="w-full grid grid-cols-2 space-y-2 pt-6">
+      <div className="w-full grid md:grid-cols-2 space-y-2 pt-6 gap-2 md:gap-0">
         <div className="flex gap-4 items-center">
           <FaMapMarkerAlt style={{ color: "#FFFFFF" }} />
           <p className="text-white">San Fransisco</p>
